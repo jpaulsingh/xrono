@@ -1,6 +1,4 @@
-@wip
-Feature: Unentered Time Report
-  As an admin user
+Feature: Unentered Time Report As an admin user
   I should be able to list users who didn't enter time
 
   Scenario: List users with unentered time

@@ -1,0 +1,24 @@
+class TicketTriager < ActiveRecord::Base
+  belongs_to :tickets
+  belongs_to :work_units
+
+  has_many :tickets
+
+  validates_presence_of :ticket_id
+  validates_presence_of :name
+
+
+  def client
+    project.client
+  end
+
+  def ticket_long_name
+    "Ticket: [#{id}] - #{project.name} - #{name} ticket for #{client.name}"
+  end
+
+ def days_gone_since
+    WorkUnit.for_ticket(self).sum(:effective_days)
+ end
+
+
+end
