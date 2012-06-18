@@ -22,8 +22,12 @@ class TicketTriager < ActiveRecord::Base
    
   def workunit_one_year_old?
     work_units.last.created_at > 1.year.ago
-   
   end
- 
- 
- end
+
+  def status_complete
+   if ticket && project && workunit_one_year_old?
+     ticket.complete = true
+   end
+  end
+end
+
