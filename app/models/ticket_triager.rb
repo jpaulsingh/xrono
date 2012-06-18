@@ -25,9 +25,10 @@ class TicketTriager < ActiveRecord::Base
   end
 
   def status_complete
-   if ticket && project && workunit_one_year_old?
-     ticket.complete = true
-   end
+    if ticket && project && workunit_one_year_old?
+      ticket.complete = true
+    end
   end
+
 end
 
