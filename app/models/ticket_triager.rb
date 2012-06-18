@@ -1,7 +1,6 @@
 class TicketTriager < ActiveRecord::Base                                                                                                 
   belongs_to :ticket
   belongs_to :work_unit
-  belongs_to :project
  
   has_many :tickets
   has_many :work_units
